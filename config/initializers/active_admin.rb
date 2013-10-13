@@ -144,6 +144,10 @@ ActiveAdmin.setup do |config|
   #
   # config.before_filter :do_something_awesome
   
+  config.before_filter do
+    params.permit!
+  end
+  
   
   # == Setting a Favicon
   #
