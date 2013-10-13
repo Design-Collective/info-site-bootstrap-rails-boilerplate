@@ -1,4 +1,11 @@
 Collective::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+    namespace :mercury do
+      resources :images
+    end
+  mount Mercury::Engine => '/'
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
