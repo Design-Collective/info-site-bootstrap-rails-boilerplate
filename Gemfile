@@ -32,6 +32,8 @@ gem "rails-boilerplate"
 gem 'select2-rails', :git => 'git://github.com/argerim/select2-rails.git'
 gem "slim", "~> 2.0.1"
 
+gem 'compass-rails', github: "Compass/compass-rails", branch: "rails4-hack"
+
 # Asset uploads
 gem 'rmagick'
 gem 'carrierwave'
