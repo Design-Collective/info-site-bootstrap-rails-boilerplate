@@ -1,12 +1,13 @@
 class PagesController < ActionController::Base
-  layout 'application'
 
   def index
     @pages = Page.all
+    render layout: 'pages'
   end
 
   def show
     @page = Page.find(params[:id])
+    render layout: 'pages'
   end
 
   def create
