@@ -1,15 +1,9 @@
-<%= simple_form_for(:page, html: {class: 'form-horizontal'}) do |f| %>
+<%= simple_form_for :page, :defaults => { :input_html => { :class => "form-control" } } do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
     <%= f.input :meta_title %>
     <%= f.input :meta_description %>
     <%= f.input :page_title %>
     <%= f.input :header_image %>
     <%= f.input :body %>
-  </div>
-
-  <div class="form-actions">
     <%= f.button :submit %>
-  </div>
 <% end %>
