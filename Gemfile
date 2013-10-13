@@ -30,6 +30,7 @@ gem 'jquery-ui-rails'
 gem "font-awesome-rails"
 gem "rails-boilerplate"
 gem 'select2-rails', :git => 'git://github.com/argerim/select2-rails.git'
+gem "slim", "~> 2.0.1"
 
 # Asset uploads
 gem 'rmagick'
