@@ -12,11 +12,14 @@ class PagesController < ActionController::Base
 
   def create
     @page = Page.new(page_params)
+    @page.save
+    redirect_to @page
   end
 
   def destroy
     @page = Page.find(params[:id])
     @page.destroy
+    redirect_to :action => 'index'
   end
 
   private
