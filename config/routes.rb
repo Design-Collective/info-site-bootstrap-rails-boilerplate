@@ -1,4 +1,6 @@
 Collective::Application.routes.draw do
+  resources :pages
+
   mount Ckeditor::Engine => '/ckeditor'
     namespace :mercury do
       resources :images
