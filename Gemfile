@@ -43,7 +43,8 @@ gem 'fog'
 # Content Admin
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'mercury-rails', github: 'jejacks0n/mercury'
-gem 'simple_form'
+# NOTE - USING BETA
+gem "simple_form", "~> 3.0.0.beta1"
 gem 'country_select'
 # S3 Asset Sync Library
 gem 'asset_sync'
