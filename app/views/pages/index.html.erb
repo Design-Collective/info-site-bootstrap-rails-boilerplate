@@ -1,0 +1,35 @@
+<h1>Listing pages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Meta title</th>
+      <th>Meta description</th>
+      <th>Page title</th>
+      <th>Header image</th>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.meta_title %></td>
+        <td><%= page.meta_description %></td>
+        <td><%= page.page_title %></td>
+        <td><%= page.header_image %></td>
+        <td><%= page.body %></td>
+        <td><%= link_to 'Show', page %></td>
+        <td><%= link_to 'Edit', edit_page_path(page) %></td>
+        <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Page', new_page_path %>
