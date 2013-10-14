@@ -18,11 +18,11 @@ class PagesController < ActionController::Base
     @page = Page.new(page_params)
 
     if @page.save
-      flash[:success] = "Done"
+      flash[:success] = "Page Successfully Saved"
       redirect_to @page
     else
       render 'new'
-      flash[:error] = "Action failed"
+      flash[:error] = "Save Failed"
     end
   end
   
@@ -35,12 +35,12 @@ class PagesController < ActionController::Base
    
     if @page.update(page_params)
       redirect_to @page
+      flash[:error] = "Page Successfully Updated"
     else
       render 'edit'
-      flash[:error] = "Action failed"
+      flash[:error] = "Update Failed"
     end
   end
-
 
   def destroy
     @page = Page.find(params[:id])
