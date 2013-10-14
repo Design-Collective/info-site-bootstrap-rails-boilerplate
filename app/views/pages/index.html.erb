@@ -1,35 +1,18 @@
 <h1>Listing pages</h1>
+<%= link_to 'Create Page', new_page_path %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Meta title</th>
-      <th>Meta description</th>
-      <th>Page title</th>
-      <th>Header image</th>
-      <th>Body</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<section>
+  <% @pages.each do |page| %>
+  <article>
+    <div><%= page.meta_title %></div>
+    <div><%= page.meta_description %></div>
+    <h2><%= page.page_title %></h2>
+    <div><%= page.header_image %></div>
+    <div><%= page.body %></div>
+    <%= link_to 'Show', page %>
+    <%= link_to 'Edit', edit_page_path(page) %>
+    <%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </article>
+  <% end %>
+</section>
 
-  <tbody>
-    <% @pages.each do |page| %>
-      <tr>
-        <td><%= page.meta_title %></td>
-        <td><%= page.meta_description %></td>
-        <td><%= page.page_title %></td>
-        <td><%= page.header_image %></td>
-        <td><%= page.body %></td>
-        <td><%= link_to 'Show', page %></td>
-        <td><%= link_to 'Edit', edit_page_path(page) %></td>
-        <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Page', new_page_path %>

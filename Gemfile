@@ -66,6 +66,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'rspec-rails', '~> 2.0'
   gem 'capybara'
   gem 'spring'
