@@ -10,11 +10,37 @@ class PagesController < ActionController::Base
     render layout: 'pages'
   end
 
+  def new
+    @page = Page.new
+  end
+
   def create
     @page = Page.new(page_params)
-    @page.save
-    redirect_to @page
+
+    if @page.save
+      flash[:success] = "Done"
+      redirect_to @page
+    else
+      render 'new'
+      flash[:error] = "Action failed"
+    end
   end
+  
+  def edit
+    @page = Page.find(params[:id])
+  end
+
+  def update
+    @page = Page.find(params[:id])
+   
+    if @page.update(page_params)
+      redirect_to @page
+    else
+      render 'edit'
+      flash[:error] = "Action failed"
+    end
+  end
+
 
   def destroy
     @page = Page.find(params[:id])

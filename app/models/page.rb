@@ -1,4 +1,7 @@
 class Page < ActiveRecord::Base
+  validates :page_title, presence: true,
+                    length: { minimum: 5 }
+
   MERCURY_FIELDS = [:page_title, :body]
 
   def save_from_mercury(params)
