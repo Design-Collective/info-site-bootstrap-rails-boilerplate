@@ -4,4 +4,6 @@
 //= require turbolinks
 //= require bootstrap
 
-$(".ckeditor").ckeditor {}
+$(".jquery_ckeditor").ckeditor (-> # callback code
+),
+  toolbar: "mini"

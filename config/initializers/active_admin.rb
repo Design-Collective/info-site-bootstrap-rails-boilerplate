@@ -1,7 +1,7 @@
 ActiveAdmin.setup do |config|
 
   # CKEditor Integration
-  config.register_javascript 'ckeditor/init.js'
+  config.register_javascript 'ckeditor-jquery'
 
   # == Site Title
   #
