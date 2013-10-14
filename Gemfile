@@ -46,7 +46,7 @@ gem "simple_form", "~> 3.0.0.beta1"
 gem 'country_select'
 # S3 Asset Sync Library
 gem 'asset_sync'
-
+gem 'ckeditor_rails'
 # Using stripe for accepting payments
 gem 'stripe'
 

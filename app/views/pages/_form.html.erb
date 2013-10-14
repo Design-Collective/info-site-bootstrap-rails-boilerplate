@@ -4,6 +4,6 @@
     <%= f.input :meta_description %>
     <%= f.input :page_title %>
     <%= f.input :header_image %>
-    <%= f.input :body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+    <%= f.text_area :body, :class => 'ckeditor' %>
     <%= f.button :submit %>
 <% end %>

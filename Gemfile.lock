@@ -97,9 +97,8 @@ GEM
       json (>= 1.7)
     celluloid (0.15.2)
       timers (~> 1.1.0)
-    ckeditor (4.0.6)
-      mime-types
-      orm_adapter
+    ckeditor_rails (4.2)
+      railties (>= 3.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.2)
@@ -337,7 +336,7 @@ DEPENDENCIES
   bootstrap-sass!
   capybara
   carrierwave
-  ckeditor
+  ckeditor_rails
   coffee-rails (~> 4.0.0)
   country_select
   debugger
