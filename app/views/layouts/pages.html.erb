@@ -15,7 +15,7 @@
     <%= content_for?(:meta_title) ? yield(:meta_title) : "Page" %>
     | <%= ENV['WEBSITE_NAME'] %>
    </title>
-  <meta name="description" content="">
+  <meta name="description" content="<%= content_for?(:meta_desc) ? yield(:meta_desc) : "Default Meta Description" %>">
 
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
