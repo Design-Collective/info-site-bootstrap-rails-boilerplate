@@ -4,10 +4,12 @@ Collective::Application.routes.draw do
   resources :pages
 
   # Mounting CKEditor Engine
-  mount Ckeditor::Engine => '/ckeditor'
-    namespace :mercury do
-      resources :images
-    end
+  
+  # Mercury
+  namespace :mercury do
+    resources :images
+  end
+
   mount Mercury::Engine => '/'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
