@@ -4,11 +4,9 @@
 <section>
   <% @pages.each do |page| %>
   <article>
-    <div><%= page.meta_title %></div>
-    <div><%= page.meta_description %></div>
     <h2><%= page.page_title %></h2>
     <div><%= page.header_image %></div>
-    <div><%= page.body.html_safe %></div>
+    <div><%= truncate(page.body, length: 300, escape: false) %></div>
     <%= link_to 'Show', page %>
     <%= link_to 'Edit', edit_page_path(page) %>
     <%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %>

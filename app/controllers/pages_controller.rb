@@ -1,5 +1,6 @@
 class PagesController < ActionController::Base
-
+  include ActionView::Helpers::TextHelper
+  
   def index
     @pages = Page.all
     render layout: 'pages'
