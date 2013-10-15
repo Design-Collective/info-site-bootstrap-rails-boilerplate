@@ -17,6 +17,11 @@
 //   .status_tag { background: #6090DB; }
 
 .cke_chrome {
-  width: 76% !important;
+  width: 95% !important;
   overflow: hidden;
+  margin: 20px auto 20px auto !important;
+}
+
+.cke_editor_page_body {
+  margin: auto;
 }
