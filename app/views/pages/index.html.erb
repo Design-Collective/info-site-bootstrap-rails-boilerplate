@@ -1,18 +1,26 @@
 <div class="page-header">
   <h1>Pages <small>Subtext for header</small></h1>
+  <%= link_to 'Create Page', new_page_path %>
 </div>
-<%= link_to 'Create Page', new_page_path %>
+
 
 <section>
   <% @pages.each do |page| %>
-  <article>
-    <h2><%= page.title %></h2>
-    <%= image_tag page.header_image.small_thumb %>
-    <div><%= truncate(page.body, length: 300, escape: false) %></div>
-    <%= link_to 'Show', page %>
-    <%= link_to 'Edit', edit_page_path(page) %>
-    <%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </article>
+    <div class="media">
+      <a class="pull-left" href="#">
+        <%= image_tag page.header_image.small_thumb %>
+      </a>
+      <div class="media-body">
+        <h4><%= page.title %></h4>
+        <%= truncate(page.body, length: 400, escape: false) %>
+      </div>
+    </div>
+    <ol class="breadcrumb pull-right">
+      <li><%= link_to 'Show', page %></li>
+      <li><%= link_to 'Edit', edit_page_path(page) %></li>
+      <li><%= link_to 'Delete', page, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    </ol>
+    <hr>
   <% end %>
 </section>
 
