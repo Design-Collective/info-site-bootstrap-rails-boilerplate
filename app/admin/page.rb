@@ -6,8 +6,8 @@ ActiveAdmin.register Page do
     column :title
     default_actions
   end
-
-  show do |page|
+  
+  show :title => :title do
     h3 page.title
     attributes_table do
       row :title
@@ -16,8 +16,8 @@ ActiveAdmin.register Page do
       end
       row :body
     end
-
   end
+  
   form do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "Details" do
