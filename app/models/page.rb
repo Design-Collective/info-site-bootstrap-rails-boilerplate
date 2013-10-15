@@ -4,10 +4,6 @@ class Page < ActiveRecord::Base
 
   mount_uploader :header_image, HeaderImageUploader
 
-  def display_name
-    @title
-  end
-
   # Mercury Editing (Still not Init)
   MERCURY_FIELDS = [:title, :body]
 
