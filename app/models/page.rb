@@ -2,6 +2,13 @@ class Page < ActiveRecord::Base
   validates :page_title, presence: true,
                     length: { minimum: 5 }
 
+  mount_uploader :header_image, HeaderImageUploader
+
+  def display_name
+    @page_title
+  end
+
+  # Mercury Editing (Still not Init)
   MERCURY_FIELDS = [:page_title, :body]
 
   def save_from_mercury(params)
