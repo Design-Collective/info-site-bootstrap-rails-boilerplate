@@ -6,14 +6,14 @@ describe "pages/index" do
       stub_model(Page,
         :meta_title => "Meta Title",
         :meta_description => "Meta Description",
-        :page_title => "Page Title",
+        :title => "Page Title",
         :header_image => "Header Image",
         :body => "MyText"
       ),
       stub_model(Page,
         :meta_title => "Meta Title",
         :meta_description => "Meta Description",
-        :page_title => "Page Title",
+        :title => "Page Title",
         :header_image => "Header Image",
         :body => "MyText"
       )

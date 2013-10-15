@@ -4,7 +4,7 @@
 <section>
   <% @pages.each do |page| %>
   <article>
-    <h2><%= page.page_title %></h2>
+    <h2><%= page.title %></h2>
     <div><%= page.header_image %></div>
     <div><%= truncate(page.body, length: 300, escape: false) %></div>
     <%= link_to 'Show', page %>

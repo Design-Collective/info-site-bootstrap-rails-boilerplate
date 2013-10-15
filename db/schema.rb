@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013043048) do
+ActiveRecord::Schema.define(version: 20131015071718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20131013043048) do
   create_table "pages", force: true do |t|
     t.string   "meta_title"
     t.string   "meta_description"
-    t.string   "page_title"
+    t.string   "title"
     t.string   "header_image"
     t.text     "body"
     t.datetime "created_at"
