@@ -1,11 +1,13 @@
-<h1>Listing pages</h1>
+<div class="page-header">
+  <h1>Pages <small>Subtext for header</small></h1>
+</div>
 <%= link_to 'Create Page', new_page_path %>
 
 <section>
   <% @pages.each do |page| %>
   <article>
     <h2><%= page.title %></h2>
-    <div><%= page.header_image %></div>
+    <%= image_tag page.header_image.small_thumb %>
     <div><%= truncate(page.body, length: 300, escape: false) %></div>
     <%= link_to 'Show', page %>
     <%= link_to 'Edit', edit_page_path(page) %>
