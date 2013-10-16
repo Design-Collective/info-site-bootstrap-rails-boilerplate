@@ -21,6 +21,7 @@ gem 'turbolinks'
 # Assets (CSS & JS)
 # Bootstrappit 3 Bitch!
 gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.git', :branch => "master"
+# gem 'bootswatch-rails', :git => 'git://github.com/maxim/bootswatch-rails'
 # Using CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails', '~> 4.0.0'
