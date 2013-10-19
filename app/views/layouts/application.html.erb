@@ -40,17 +40,15 @@
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
   <!-- Add your site or application content here -->
-  
   <div id="wrap">
     <%= render :partial => 'shared/header' %>
     <%= yield %>
   </div>
-  
   <%= render :partial => 'shared/footer' %>
   <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
+  <% if Rails.env.production? %>
   <%= javascript_include_tag 'application' %>
 
-  <% if Rails.env.production? %>
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <script>
