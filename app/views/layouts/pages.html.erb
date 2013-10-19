@@ -58,6 +58,20 @@
   <%= render :partial => '/shared/footer' %>
   <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
   <%= javascript_include_tag 'application' %>
+    
+    <script type="text/javascript">
+    var _enlightenedtq = _enlightenedtq || [];
+    _enlightenedtq.push(['init', '1', '1']);
+  </script>
+  <script type="text/javascript">
+    (function(d){
+      var h = d.getElementsByTagName('HEAD')[0], s = d.createElement('SCRIPT');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = '//d1iw7u0bp34vki.cloudfront.net/api/development-client.js';
+      h.appendChild(s);
+    }(document));
+  </script>
 
   <% if Rails.env.production? %>
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
