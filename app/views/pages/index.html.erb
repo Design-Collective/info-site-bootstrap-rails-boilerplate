@@ -3,14 +3,9 @@
   <%= link_to 'Create Page', new_page_path %>
 </div>
 
+
 <section>
   <% @pages.each do |page| %>
-    <% if @categories.empty? %>
-      No Categories
-    <% else %>
-      Has Category
-    <% end %>
-
     <div class="media">
       <a class="pull-left" href="#">
         <%= image_tag page.header_image.small_thumb %>
