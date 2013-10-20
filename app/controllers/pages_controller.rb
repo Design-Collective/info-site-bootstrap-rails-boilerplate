@@ -3,6 +3,9 @@ class PagesController < ActionController::Base
 
   def index
     @pages = Page.all
+    #@featured_home = Page.category.find(params[:id])
+    @featured = Page.joins(:categories).where(:categories => { :name => 'Featured on Home' })
+
     render layout: 'pages'
   end
 
@@ -48,6 +51,7 @@ class PagesController < ActionController::Base
     @page.destroy
     redirect_to :action => 'index'
   end
+
 
   private
 

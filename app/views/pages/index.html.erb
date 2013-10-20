@@ -5,14 +5,17 @@
 
 
 <section>
-  <% @pages.each do |page| %>
+  <% @featured.page.each do |page| %>
     <div class="media">
       <a class="pull-left" href="#">
         <%= image_tag page.header_image.small_thumb %>
       </a>
       <div class="media-body">
         <h4><%= page.title %></h4>
-        <%= truncate(page.body, length: 400, escape: false) %>
+        <% page.categories.each do |category| %>
+          <%= link_to category.name, category_path(category) %>
+        <% end %>
+        <%= truncate(page.body, length: 300, escape: false) %>
       </div>
     </div>
     <ol class="breadcrumb pull-right">

@@ -1,7 +1,5 @@
 class Page < ActiveRecord::Base
-  has_and_belongs_to_many :categories, join_table: "categories_pages"
-
-  validates :categories, presence: true
+  has_and_belongs_to_many :categories
 
   validates :title, presence: true,
                     length: { minimum: 5 }
