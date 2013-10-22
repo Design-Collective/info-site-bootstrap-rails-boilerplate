@@ -12,47 +12,49 @@ gem 'paranoia', '~> 2.0'
 # Using unicorn as the app server
 gem 'unicorn'
 
-# Using Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# Speed & Caching
 gem 'turbolinks'
 
 # Assets (CSS & JS)
-# Bootstrappit 3 Bitch!
-gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.git', :branch => "master"
-# gem 'bootswatch-rails', :git => 'git://github.com/maxim/bootswatch-rails'
-# Using CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+group :assets do
+  gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.git', :branch => "master"
+  # gem 'bootswatch-rails', :git => 'git://github.com/maxim/bootswatch-rails'
+  gem 'coffee-rails', '~> 4.0.0'
+  gem 'animate-rails'
+  gem 'jquery-rails'
+  gem 'jquery-ui-rails'
+  gem 'uglifier'
+  gem "font-awesome-rails"
+  gem 'asset_sync'
+end
+
+# Templating and Runtime
 gem 'sass-rails', '~> 4.0.0'
-gem 'animate-rails'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem "font-awesome-rails"
-gem "rails-boilerplate"
+gem 'rails-boilerplate'
 gem 'select2-rails', :git => 'git://github.com/argerim/select2-rails.git'
 gem "slim", "~> 2.0.1"
 
-# Asset uploads
+# Asset Management
 gem 'rmagick'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'fog'
+gem 'paperclip'
 
 # Content Admin
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'mercury-rails', github: 'jejacks0n/mercury'
-# gem 'ancestry'
 gem "simple_form", "~> 3.0.0.beta1"
 gem 'country_select'
-# S3 Asset Sync Library
-gem 'asset_sync'
 gem 'ckeditor_rails'
-# Using stripe for accepting payments
-gem 'stripe'
 gem 'friendly_id', '~> 5.0.0'
+
+# Payments
+# gem 'stripe'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -76,6 +78,7 @@ group :development do
   # errors
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem "quiet_assets"
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -89,4 +92,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'paperclip'
