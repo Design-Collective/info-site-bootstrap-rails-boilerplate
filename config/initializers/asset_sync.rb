@@ -1,4 +1,5 @@
 AssetSync.configure do |config|
+  # Heroku: heroku labs:enable user-env-compile
   config.fog_provider = 'AWS'
   config.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
   config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
