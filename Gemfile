@@ -42,7 +42,7 @@ gem 'fog'
 # Content Admin
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'mercury-rails', github: 'jejacks0n/mercury'
-# NOTE - USING BETA
+# gem 'ancestry'
 gem "simple_form", "~> 3.0.0.beta1"
 gem 'country_select'
 # S3 Asset Sync Library
@@ -50,7 +50,7 @@ gem 'asset_sync'
 gem 'ckeditor_rails'
 # Using stripe for accepting payments
 gem 'stripe'
-
+gem 'friendly_id', '~> 5.0.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 

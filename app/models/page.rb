@@ -1,14 +1,13 @@
 class Page < ActiveRecord::Base
   has_and_belongs_to_many :categories
 
-  validates :title, presence: true,
-                    length: { minimum: 5 }
+  validates :title, presence: true, length: { minimum: 5 }
 
   mount_uploader :header_image, HeaderImageUploader
 
-  #@categories = @page.categories
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders]
 
-  # Mercury Editing (Still not Init)
   MERCURY_FIELDS = [:title, :body]
 
   def save_from_mercury(params)
@@ -19,4 +18,5 @@ class Page < ActiveRecord::Base
     end
     save!
   end
+
 end

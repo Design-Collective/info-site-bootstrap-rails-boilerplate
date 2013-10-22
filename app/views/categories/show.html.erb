@@ -1,0 +1,6 @@
+<h2>Pages that have <%= @category.name %> as category</h2>
+<ul>
+  <% @category.pages.each do |page| %>
+    <li><%= page.title %></li>
+  <% end %>
+</ul>

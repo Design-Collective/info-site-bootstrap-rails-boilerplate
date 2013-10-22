@@ -1,16 +1,19 @@
 class PagesController < ActionController::Base
   include ActionView::Helpers::TextHelper
+  before_filter :find_page
 
   def index
     @pages = Page.all
     #@featured_home = Page.category.find(params[:id])
-    @featured = Page.joins(:categories).where(:categories => { :name => 'Featured on Home' })
-
     render layout: 'pages'
   end
 
+  #def self.category(category)
+  #  where(:categories => categories)
+  #end
+
   def show
-    @page = Page.find(params[:id])
+    @page = Page.friendly.find(params[:id])
     render layout: 'pages'
   end
 
@@ -52,6 +55,17 @@ class PagesController < ActionController::Base
     redirect_to :action => 'index'
   end
 
+
+  def find_page
+    @page = Page.find params[:id]
+
+    # If an old id or a numeric id was used to find the record, then
+    # the request path will not match the post_path, and we should do
+    # a 301 redirect that uses the current friendly id.
+    if request.path != page_path(@page)
+      return redirect_to @page, :status => :moved_permanently
+    end
+  end
 
   private
 
