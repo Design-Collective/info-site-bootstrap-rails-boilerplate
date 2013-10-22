@@ -8,6 +8,8 @@ unless Rails.env.production?
   Dotenv.load
 end
 
+# Enable the asset pipeline
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -15,18 +17,16 @@ Bundler.require(:default, Rails.env)
 
 module Collective
   class Application < Rails::Application
-    # Enable the asset pipeline
     config.assets.enabled = true
     config.assets.digest = true
     config.time_zone = 'Pacific Time (US & Canada)'
-
+    # Version of your assets, change this if you want to expire all your assets.
+    config.assets.version = '1.0.0.3'
     config.assets.precompile += [
       'active_admin.css',
       'active_admin.js',
       'pages.css',
       'pages.js',
-      'application.css',
-      'application.js',
       'categories.css',
       'categories.js',
       'modernizr.js',  
