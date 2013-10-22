@@ -15,6 +15,27 @@ Bundler.require(:default, Rails.env)
 
 module Collective
   class Application < Rails::Application
+    # Enable the asset pipeline
+    config.assets.enabled = true
+    config.assets.digest = true
+    config.time_zone = 'Pacific Time (US & Canada)'
+
+    config.assets.precompile += [
+      'active_admin.css',
+      'active_admin.js',
+      'pages.css',
+      'pages.js',
+      'application.css',
+      'application.js',
+      'categories.css',
+      'categories.js',
+      'modernizr.js',  
+      'jquery.js',
+      'bootstrap.js'
+    ]
+    config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif]
+    config.assets.precompile += %w[*.svg *.eot *.woff *.ttf]
+    config.assets.precompile += %w(.svg .eot .woff .ttf)
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
