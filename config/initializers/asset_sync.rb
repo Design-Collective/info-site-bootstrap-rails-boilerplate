@@ -4,6 +4,8 @@ AssetSync.configure do |config|
   config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
   # To use AWS reduced redundancy storage.
   # config.aws_reduced_redundancy = true
+  config.prefix = 'assets'
+  config.public_path = Pathname('./public')
   config.fog_directory = ENV['FOG_DIRECTORY']
 
   # Invalidate a file on a cdn after uploading files

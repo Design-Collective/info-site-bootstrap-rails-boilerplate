@@ -56,9 +56,11 @@ Collective::Application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-
+  # store assets in a 'folder' instead of bucket root
+  
+  config.assets.prefix = "/production/assets"
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
