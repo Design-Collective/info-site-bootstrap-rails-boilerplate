@@ -4,6 +4,6 @@ class Category < ActiveRecord::Base
   validates_presence_of :slug
   
   extend FriendlyId
-  friendly_id :name, use: [:slugged, :finders]
+  friendly_id :slug, use: [:slugged, :finders]
   
 end

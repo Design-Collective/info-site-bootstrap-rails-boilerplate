@@ -1,6 +1,5 @@
 class PagesController < ActionController::Base
   include ActionView::Helpers::TextHelper
-  before_filter :find_page
 
   def index
     @pages = Page.all
@@ -13,7 +12,7 @@ class PagesController < ActionController::Base
   #end
 
   def show
-    @page = Page.friendly.find(params[:id])
+    @page = Page.find(params[:id])
     render layout: 'pages'
   end
 

@@ -2,11 +2,12 @@ class Page < ActiveRecord::Base
   has_and_belongs_to_many :categories
 
   validates :title, presence: true, length: { minimum: 5 }
+  validates :slug, presence: true
 
   mount_uploader :header_image, HeaderImageUploader
 
   extend FriendlyId
-  friendly_id :title, use: [:slugged, :finders]
+  friendly_id :slug
 
   MERCURY_FIELDS = [:title, :body]
 
