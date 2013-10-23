@@ -59,6 +59,7 @@ Collective::Application.configure do
   #config.cache_store = :dalli_store
   
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
+  config.assets.prefix = "/assets"
   config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
 
   # Precompile additional assets.
@@ -74,7 +75,9 @@ Collective::Application.configure do
     'jquery.js',
     'bootstrap.js'
   ]
-
+  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif]
+  config.assets.precompile += %w[*.svg *.eot *.woff *.ttf]
+  config.assets.precompile += %w(.svg .eot .woff .ttf)
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
