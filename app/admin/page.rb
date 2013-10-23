@@ -1,6 +1,6 @@
 ActiveAdmin.register Page do
 
-  menu :priority => 1
+  menu :priority => 2
   
   #sidebar "Category and Tags", only: [:show, :edit] do
   #  ul do
@@ -47,6 +47,19 @@ ActiveAdmin.register Page do
     end
     f.inputs "Category / Tags" do
       f.input :categories, :as => :check_boxes 
+    end
+    f.inputs "Sliders" do
+      f.has_many :page_sliders do |slider_f|
+        if !slider_f.object.nil?
+          # show the destroy checkbox only if it is an existing appointment
+          # else, there's already dynamic JS to add / remove 
+          slider_f.input :_destroy, :as => :boolean, :label => "Destroy?"
+        end
+
+        slider_f.input :carousel_title # it should automatically generate a drop-down select to choose from your existing patients
+        slider_f.text_area :carousel_content
+        slider_f.input :carousel_bg_img, as: :file
+      end
     end
     f.inputs "Body Content" do
       f.text_area :body, :class => 'ckeditor', :label => "Body Content"

@@ -4,6 +4,8 @@ class Page < ActiveRecord::Base
   validates :title, presence: true, length: { minimum: 5 }
   validates :slug, presence: true
 
+  has_many :page_sliders
+  accepts_nested_attributes_for :page_sliders
   mount_uploader :header_image, HeaderImageUploader
 
   extend FriendlyId
