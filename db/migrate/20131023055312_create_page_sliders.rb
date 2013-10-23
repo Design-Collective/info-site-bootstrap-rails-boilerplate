@@ -1,6 +1,6 @@
 class CreatePageSliders < ActiveRecord::Migration
   def change
-    create_table :page_sliders do |t|
+    create_table :slides do |t|
     	t.belongs_to :page, index: true
       t.string :carousel_bg_img
       t.string :carousel_title

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023055312) do
+ActiveRecord::Schema.define(version: 20131023171151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,17 +102,6 @@ ActiveRecord::Schema.define(version: 20131023055312) do
     t.datetime "updated_at"
   end
 
-  create_table "page_sliders", force: true do |t|
-    t.integer  "page_id"
-    t.string   "carousel_bg_img"
-    t.string   "carousel_title"
-    t.text     "carousel_content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "page_sliders", ["page_id"], name: "index_page_sliders_on_page_id", using: :btree
-
   create_table "pages", force: true do |t|
     t.string   "meta_title"
     t.string   "meta_description"
@@ -125,5 +114,16 @@ ActiveRecord::Schema.define(version: 20131023055312) do
   end
 
   add_index "pages", ["slug"], name: "index_pages_on_slug", using: :btree
+
+  create_table "slides", force: true do |t|
+    t.integer  "page_id"
+    t.string   "carousel_bg_img"
+    t.string   "carousel_title"
+    t.text     "carousel_content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "slides", ["page_id"], name: "index_slides_on_page_id", using: :btree
 
 end
