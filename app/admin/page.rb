@@ -53,7 +53,7 @@ ActiveAdmin.register Page do
         if !slider_f.object.nil?
           # show the destroy checkbox only if it is an existing appointment
           # else, there's already dynamic JS to add / remove 
-          slider_f.input :_destroy, :as => :boolean, :label => "Destroy?"
+          slider_f.input :_destroy, :as => :boolean, :label => "Mark for Deletion?"
         end
 
         slider_f.input :carousel_title # it should automatically generate a drop-down select to choose from your existing patients
