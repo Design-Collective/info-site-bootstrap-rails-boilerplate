@@ -1,13 +1,29 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+require "active_record/railtie"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "sprockets/railtie"
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env)
+  unless Rails.env.production?
+    require 'dotenv'
+    Dotenv.load
+  end
+
+
+if defined?(Bundler)
+  # If you precompile assets before deploying to production, use this line
+  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  # If you want your assets lazily compiled in production, use this line
+  # Bundler.require(:default, :assets, Rails.env)
+end
 
 module Collective
   class Application < Rails::Application
+
+    # Version of your assets, change this if you want to expire all your assets.
+    
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

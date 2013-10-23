@@ -1,0 +1,10 @@
+<%= simple_form_for @page do |f| %>
+  <%= f.error_notification %>
+    <%= f.input :meta_title %>
+    <%= f.input :meta_description %>
+    <%= f.input :title %>
+    <%= f.input :slug, hint: 'Add dashes between words: "this-is-a-page-slug"' %>
+    <%= f.input :header_image %>
+    <%= f.text_area :body, :class => 'ckeditor' %>
+    <%= f.button :submit %>
+<% end %>

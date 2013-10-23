@@ -1,0 +1,7 @@
+<div class="container">
+	<div class="page-header">
+	  <h1><%= content_for?(:title) ? yield(:title) : "Title is Missing" %> 
+	  <small>Subtext for header</small></h1>
+	  <%= link_to 'Create Page', new_page_path %>
+	</div>
+</div>

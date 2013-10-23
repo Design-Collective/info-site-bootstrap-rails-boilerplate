@@ -1,0 +1,16 @@
+<% content_for :meta_title do %><%= @page.meta_title %><% end %>
+<% content_for :meta_desc do %><%= @page.meta_description %><% end %>
+<% content_for :title do %><%= @page.title %><% end %>
+
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Header image:</strong>
+  <%= @page.header_image %>
+</p>
+
+<p>
+  <%= @page.body.html_safe %>
+</p>
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

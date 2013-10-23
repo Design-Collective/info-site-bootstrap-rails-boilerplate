@@ -1,0 +1,21 @@
+<div class="row">
+
+  <% @featured.page.limit(3).each do |page| %>
+  
+    <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
+      <% link_to 'Page' %>
+
+        <img class="img-circle thumbnail" src="http://lorempixel.com/150/150/technics" alt="" /> 
+        <%#= image_tag page.header_image.small_thumb %>
+
+
+      <h4><%= page.title %></h4>
+      <% page.categories.each do |category| %>
+        <%= link_to category.name, category_path(category) %>
+      <% end %>
+      <%= truncate(sanitize(page.body, tags: %w(p b i br)), length: 140, omission: (link_to " ...Read More ", page), escape: false, separator: ' ') %>
+    </div>
+
+  <% end %>
+</div>
+
