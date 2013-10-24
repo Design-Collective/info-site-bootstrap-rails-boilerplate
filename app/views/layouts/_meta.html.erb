@@ -1,0 +1,4 @@
+<title><%= content_for?(:meta_title) ? yield(:meta_title) : ENV['WEBSITE_NAME'] %> | <%= ENV['WEBSITE_NAME'] %></title>
+
+<meta name="description" content="<%= content_for?(:meta_desc) ? yield(:meta_desc) : ENV['WEBSITE_DESCRIPTION'] %>">
+<meta name="viewport" content="width=device-width">
