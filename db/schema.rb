@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023171151) do
+ActiveRecord::Schema.define(version: 20131024062441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,8 +111,10 @@ ActiveRecord::Schema.define(version: 20131023171151) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "ancestry"
   end
 
+  add_index "pages", ["ancestry"], name: "index_pages_on_ancestry", using: :btree
   add_index "pages", ["slug"], name: "index_pages_on_slug", using: :btree
 
   create_table "slides", force: true do |t|

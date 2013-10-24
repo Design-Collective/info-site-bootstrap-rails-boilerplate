@@ -42,6 +42,7 @@ ActiveAdmin.register Page do
       f.input :meta_title
       f.input :meta_description
       f.input :title
+      f.input :ancestry, :as => :select, :collection => Page.all(:order => "title"), :include_blank => true
       f.input :slug, hint: 'Add dashes between words: "this-is-a-page-slug"'
       f.input :header_image, as: :file, hint: (f.template.image_tag(f.object.header_image.small_thumb.url) if f.object.header_image?)
     end

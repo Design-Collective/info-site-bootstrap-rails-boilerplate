@@ -18,6 +18,7 @@ class PagesController < ActionController::Base
 
   def new
     @page = Page.new
+    #@page = Page.new(:parent_id => params[:parent_id])
   end
 
   def create
@@ -69,6 +70,6 @@ class PagesController < ActionController::Base
   private
 
   def page_params
-    params.require(:page).permit(:meta_title, :meta_description, :title, :header_image, :body)
+    params.require(:page).permit(:meta_title, :meta_description, :title, :header_image, :body, :parent_id)
   end
 end

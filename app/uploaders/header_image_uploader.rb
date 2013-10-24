@@ -16,7 +16,7 @@ class HeaderImageUploader < BaseUploader
   end
 
   version :small_thumb do
-    process :resize_to_fill => [200, 144]
+    process :resize_to_fill => [150, 150]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

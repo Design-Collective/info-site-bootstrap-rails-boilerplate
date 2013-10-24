@@ -4,6 +4,7 @@ class Page < ActiveRecord::Base
   validates :title, presence: true, length: { minimum: 5 }
   validates :slug, presence: true
 
+  has_ancestry
   has_many :slides
   accepts_nested_attributes_for :slides, allow_destroy: true
   mount_uploader :header_image, HeaderImageUploader
