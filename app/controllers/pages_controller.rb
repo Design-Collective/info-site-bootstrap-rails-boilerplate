@@ -1,60 +1,19 @@
 class PagesController < ActionController::Base
   include ActionView::Helpers::TextHelper
 
+
+  slides = Slide.page
+
   def index
     @pages = Page.all
-    #@featured_home = Page.category.find(params[:id])
     render layout: 'pages'
   end
-
-  #def self.category(category)
-  #  where(:categories => categories)
-  #end
 
   def show
     @page = Page.find(params[:id])
+    @slides = Slide.page
     render layout: 'pages'
   end
-
-  def new
-    @page = Page.new
-    #@page = Page.new(:parent_id => params[:parent_id])
-  end
-
-  def create
-    @page = Page.new(page_params)
-
-    if @page.save
-      flash[:success] = "Page Successfully Saved"
-      redirect_to @page
-    else
-      render 'new'
-      flash[:error] = "Save Failed"
-    end
-  end
-  
-  def edit
-    @page = Page.find(params[:id])
-  end
-
-  def update
-    @page = Page.find(params[:id])
-   
-    if @page.update(page_params)
-      redirect_to @page
-      flash[:error] = "Page Successfully Updated"
-    else
-      render 'edit'
-      flash[:error] = "Update Failed"
-    end
-  end
-
-  def destroy
-    @page = Page.find(params[:id])
-    @page.destroy
-    redirect_to :action => 'index'
-  end
-
 
   def find_page
     @page = Page.find params[:id]

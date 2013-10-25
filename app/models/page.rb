@@ -5,6 +5,7 @@ class Page < ActiveRecord::Base
   validates :slug, presence: true
 
   has_ancestry
+  
   has_many :slides
   accepts_nested_attributes_for :slides, allow_destroy: true
   mount_uploader :header_image, HeaderImageUploader

@@ -7,7 +7,8 @@ ActiveAdmin.register Page do
   #    li link_to("Page Categories", admin_page_category_path(page))
   #  end
   #end
-
+  actions :all, except: [:show] #just show
+  
   index do
     column :title
     #column :categories do |post|
@@ -42,14 +43,14 @@ ActiveAdmin.register Page do
       f.input :meta_title
       f.input :meta_description
       f.input :title
-      f.input :ancestry, :as => :select, :collection => Page.all(:order => "title"), :include_blank => true
+      f.input :parent_id, :as => :select, :collection => Page.all(:order => "title"), :include_blank => true
       f.input :slug, hint: 'Add dashes between words: "this-is-a-page-slug"'
       f.input :header_image, as: :file, hint: (f.template.image_tag(f.object.header_image.small_thumb.url) if f.object.header_image?)
     end
     f.inputs "Category / Tags" do
       f.input :categories, :as => :check_boxes 
     end
-    f.inputs "Sliders" do
+    f.inputs "Slides" do
       f.has_many :slides do |slider_f|
         if !slider_f.object.nil?
           # show the destroy checkbox only if it is an existing appointment
