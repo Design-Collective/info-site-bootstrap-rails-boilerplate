@@ -21,22 +21,6 @@ ActiveAdmin.register Page do
     default_actions
   end
   
-  show :title => :title do
-    h3 page.title
-    attributes_table do
-      row :title
-      row :header_image do
-         image_tag page.header_image_url(:small_thumb)
-      end
-      #table_for page.categories do
-      #  column "Categories" do |category|
-      #    link_to category [ :admin, category ]
-      #  end
-      #end
-      row :body
-    end
-  end
-  
   form do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "Details" do

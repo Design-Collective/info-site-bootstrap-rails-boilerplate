@@ -14,7 +14,7 @@ class HeaderImageUploader < BaseUploader
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/"
   end
-
+  
   version :small_thumb do
     process :resize_to_fill => [150, 150]
   end
