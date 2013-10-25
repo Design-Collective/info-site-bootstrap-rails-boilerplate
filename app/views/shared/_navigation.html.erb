@@ -12,33 +12,21 @@
       <ul class="nav navbar-nav">
         <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
         <% for page in Page.roots.each do %>
-          <!--<li class="<%#= 'active' if current_page?(id: page.slug) %>"><%= link_to (page.title), page %></li>-->
           <% if page.is_childless? %>
-          
-          <%= nav_link_to page.title, page_path(page), {}, { wrapper: 'li', selected_class: 'active' } %>
-          
-          <% elsif page.has_children? %>
-
-          <li class="dropdown <% if current_page?(page) == current_path %> active<% end %>">
-            <%= link_to page_path(page), :class => "dropdown-toggle", :data => { :'toggle' => 'dropdown'} do %>
+            <%= nav_link_to page.title, page_path(page), {}, { wrapper: 'li', selected_class: 'active' } %>
+            <% elsif page.has_children? %>
+            <li class="dropdown <%= 'active' if current_page?(id: page.slug) %>">
+              <%= link_to page_path(page), :class => "dropdown-toggle", :data => { :'toggle' => 'dropdown'} do %>
               <%= page.title %> <b class="caret"></b>
-            <% end %>
-          
-
-            <ul class="dropdown-menu">
-              <% for page in Page.descendants_of(page) do %>
-              <li><%= link_to page.title, page_path(page) %></li>
               <% end %>
-            </ul>
-
-
-          <li>
-
-
-
+              <ul class="dropdown-menu">
+                <% for page in Page.descendants_of(page) do %>
+                <li><%= link_to page.title, page_path(page) %></li>
+                <% end %>
+              </ul>
+            <li>
           <% end %>
         <% end %>
-        
       </ul>
     </div><!--/.navbar-collapse -->
   </div>
