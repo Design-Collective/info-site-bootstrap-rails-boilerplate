@@ -1,17 +1,22 @@
 
-//= require animate
+@import "base"; // Our variables
 
-@import "bootstrap";
+@import "bootstrap_manifest"; // In stylesheets - importing from gem
+@import "compass";
 @import "font-awesome";
+@import "theme";
 @import "pages";
+
+@include establish-baseline;
+// element { @include adjust-font-size-to(18px); }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 
-html,
-body {
+html, body {
   height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
+  text-rendering: optimizeLegibility;
+  @include baseline-grid-background($base-rhythm-unit);
 }
 
 .navbar-static-top {
@@ -35,12 +40,7 @@ body {
   background-color: #f5f5f5;
 }
 
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
-#wrap > .container {
+#wrap > .container:first-child {
   padding: 60px 15px 0;
 }
 .container .credit {
@@ -54,4 +54,8 @@ body {
 
 code {
   font-size: 80%;
+}
+
+#footer {
+  margin-top: 40px;
 }

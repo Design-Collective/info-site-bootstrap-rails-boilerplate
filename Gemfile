@@ -13,14 +13,13 @@ gem 'paranoia', '~> 2.0'
 gem 'unicorn'
 
 # Speed & Caching
-gem 'turbolinks'
+# gem 'turbolinks'
 
 # Assets (CSS & JS)
 group :assets do
-  gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.git', :branch => "master"
+  gem 'bootstrap-sass-rails'
   # gem 'bootswatch-rails', :git => 'git://github.com/maxim/bootswatch-rails'
   gem 'coffee-rails', '~> 4.0.0'
-  gem 'animate-rails'
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
   gem 'uglifier'
@@ -29,7 +28,8 @@ group :assets do
 end
 
 # Templating and Runtime
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
+gem "compass-rails", "~> 2.0.alpha.0"
 gem 'rails-boilerplate'
 gem 'select2-rails', :git => 'git://github.com/argerim/select2-rails.git'
 gem "slim", "~> 2.0.1"
@@ -48,7 +48,7 @@ gem "simple_form", "~> 3.0.0.beta1"
 gem 'country_select'
 gem 'ckeditor_rails'
 gem 'friendly_id', '~> 5.0.0'
-
+gem 'ancestry'
 # Payments
 # gem 'stripe'
 

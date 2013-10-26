@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022035739) do
+ActiveRecord::Schema.define(version: 20131024062441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,8 +111,21 @@ ActiveRecord::Schema.define(version: 20131022035739) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "ancestry"
   end
 
+  add_index "pages", ["ancestry"], name: "index_pages_on_ancestry", using: :btree
   add_index "pages", ["slug"], name: "index_pages_on_slug", using: :btree
+
+  create_table "slides", force: true do |t|
+    t.integer  "page_id"
+    t.string   "carousel_bg_img"
+    t.string   "carousel_title"
+    t.text     "carousel_content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "slides", ["page_id"], name: "index_slides_on_page_id", using: :btree
 
 end

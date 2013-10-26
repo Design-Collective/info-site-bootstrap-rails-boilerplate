@@ -67,9 +67,8 @@ Collective::Application.configure do
    config.assets.precompile += [
     'active_admin.css',
     'active_admin.js',
-    'pages.css',
+    'home.css',
     'pages.js',
-    'categories.css',
     'categories.js',
     'modernizr.js',  
     'jquery.js',

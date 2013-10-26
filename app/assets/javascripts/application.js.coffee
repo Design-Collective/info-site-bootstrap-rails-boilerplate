@@ -1,7 +1,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require ckeditor-jquery
-//= require turbolinks
-//= require bootstrap
+//= require twitter/bootstrap
 
 $(".ckeditor").ckeditor {}
+
+$('.carousel').carousel({
+  interval: 10000
+})
+
+# Adds Active and Fat as a class:
+# $(".btn.btn-primary").button("toggle").addClass("fat")

@@ -7,7 +7,6 @@
         <img class="img-circle thumbnail" src="http://lorempixel.com/150/150/technics" alt="" /> 
         <%#= image_tag page.header_image.small_thumb %>
       </a>
-
       <h4><%= page.title %></h4>
       <% page.categories.each do |category| %>
         <%= link_to category.name, category_path(category) %>
@@ -17,4 +16,3 @@
 
   <% end %>
 </div>
-
