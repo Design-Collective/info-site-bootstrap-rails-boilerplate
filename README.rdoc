@@ -1,11 +1,26 @@
-== README
+== Kickstarting kit for Rails 4/ Active Admin / Bootstrap 3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+* Dynamic navigation based on root pages & full ancestry
+* Display carousels or regular page heading (based on a HM relationship)
+* Assign pages to categories and display them as lists
+* Compass integration for SCSS iteration
+* CKEditor for admin editing of text areas
 
 * Ruby version: 2.0
+* Rails 4.0
+* ActiveAdmin
+
+== To do
+* Create Seed
+* Create rSpecs
+* Pull in child pages on parents
+* Adjust Category pages for informational architecture
+* Adjust Page Index for informational architecture
+* Create new CKEditor instances when slide inputs are created on the fly (AA)
+* Create new baseline grid for better typography using compass
+* Dry up views / move any logic & queries to helpers
+
+- Check out the gem file for more info
 
 * System dependencies
 
@@ -18,6 +33,7 @@ Things you may want to cover:
     rake db:migrate
 
 * Database initialization
+- No method yet
 
 
 Please feel free to use a different markup language if you do not plan to run
