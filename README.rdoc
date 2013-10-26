@@ -10,6 +10,12 @@
 * Rails 4.0
 * ActiveAdmin
 
+== System dependencies
+
+  * Rails 4
+  * PostgreSQL
+  * S3 / Cloudfront - Production
+  
 == To do
 * Create Seed
 * Create rSpecs
@@ -22,11 +28,7 @@
 
 - Check out the gem file for more info
 
-* System dependencies
 
-  * Rails 4
-  * PostgreSQL
-  * S3 / Cloudfront - Production
 
 * Database creation
 
