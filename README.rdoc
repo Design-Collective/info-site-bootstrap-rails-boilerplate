@@ -1,4 +1,4 @@
-== Kickstarting kit for Rails 4/ Active Admin / Bootstrap 3
+= Kickstarting kit for Rails 4/ Active Admin / Bootstrap 3
 
 * Dynamic navigation based on root pages & full ancestry
 * Display carousels or regular page heading (based on a HM relationship)
@@ -10,13 +10,13 @@
 * Rails 4.0
 * ActiveAdmin
 
-== System dependencies
+= System dependencies
 
   * Rails 4
   * PostgreSQL
   * S3 / Cloudfront - Production
   
-= To do
+== To do
 * Create Seed
 * Create rSpecs
 * Pull in child pages on parents
@@ -30,11 +30,11 @@
 
 
 
-= Database creation
+== Database creation
 
     rake db:migrate
 
-= Database initialization
+== Database initialization
 - No method yet
 
 
