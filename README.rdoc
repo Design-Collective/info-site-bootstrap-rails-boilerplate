@@ -1,4 +1,4 @@
-= Kickstarting kit for Rails 4/ Active Admin / Bootstrap 3
+= Kickstarting kit for Rails 4 / Active Admin / Bootstrap 3
 
 * Dynamic navigation based on root pages & full ancestry
 * Display carousels or regular page heading (based on a HM relationship)
