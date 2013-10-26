@@ -16,7 +16,7 @@
   * PostgreSQL
   * S3 / Cloudfront - Production
   
-== To do
+= To do
 * Create Seed
 * Create rSpecs
 * Pull in child pages on parents
@@ -30,11 +30,11 @@
 
 
 
-* Database creation
+= Database creation
 
     rake db:migrate
 
-* Database initialization
+= Database initialization
 - No method yet
 
 
