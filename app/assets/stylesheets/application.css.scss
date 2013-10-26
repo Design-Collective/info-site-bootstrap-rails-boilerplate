@@ -1,16 +1,22 @@
 
-@import "bootstrap";
+@import "base"; // Our variables
+
+@import "bootstrap_manifest"; // In stylesheets - importing from gem
+@import "compass";
 @import "font-awesome";
-@import "pages";
 @import "theme";
+@import "pages";
+
+@include establish-baseline;
+// element { @include adjust-font-size-to(18px); }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 
-html,
-body {
+html, body {
   height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
+  text-rendering: optimizeLegibility;
+  @include baseline-grid-background($base-rhythm-unit);
 }
 
 .navbar-static-top {

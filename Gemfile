@@ -17,7 +17,7 @@ gem 'unicorn'
 
 # Assets (CSS & JS)
 group :assets do
-  gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.git', :branch => 'master'
+  gem 'bootstrap-sass-rails'
   # gem 'bootswatch-rails', :git => 'git://github.com/maxim/bootswatch-rails'
   gem 'coffee-rails', '~> 4.0.0'
   gem 'jquery-rails'

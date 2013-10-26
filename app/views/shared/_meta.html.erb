@@ -2,3 +2,7 @@
 
 <meta name="description" content="<%= content_for?(:meta_desc) ? yield(:meta_desc) : ENV['WEBSITE_DESCRIPTION'] %>">
 <meta name="viewport" content="width=device-width">
+
+<% if Rails.env.development? %>
+<script type="text/javascript" data-project="PROJECT_NAME" src="http://localhost:48626/takana.js"></script>
+<% end %>

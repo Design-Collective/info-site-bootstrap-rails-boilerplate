@@ -31,14 +31,6 @@ GIT
       coffee-rails (>= 3.2.2)
       railties (>= 3.0)
 
-GIT
-  remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
-  revision: e551ce0a8f3df19ebbac3fe053d4c2ba72d76a22
-  branch: master
-  specs:
-    bootstrap-sass (3.0.0.0.rc)
-      sass (~> 3.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -81,6 +73,9 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass-rails (3.0.0.3)
+      railties (>= 3.1.0)
+      sass-rails (>= 3.1.0)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
@@ -340,7 +335,7 @@ DEPENDENCIES
   asset_sync
   better_errors
   binding_of_caller
-  bootstrap-sass!
+  bootstrap-sass-rails
   capybara
   carrierwave
   ckeditor_rails

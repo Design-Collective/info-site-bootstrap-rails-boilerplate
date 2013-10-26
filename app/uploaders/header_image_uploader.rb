@@ -8,13 +8,10 @@ class HeaderImageUploader < BaseUploader
 
   # Choose what kind of storage to use for this uploader:
   # storage :fog
-
-  # Override the directory where uploaded files will be stored.
-  # This is a sensible default for uploaders that are meant to be mounted:
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/"
-  end
   
+  version :header_top do
+    process :resize_to_fill => [1200, 200]
+  end
   version :small_thumb do
     process :resize_to_fill => [150, 150]
   end

@@ -2,22 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.page-header > img {
+.page-header {
+
+	img {
 	width:100%;
 	display: block;
 	max-width: 100%;
-	height: auto;
+	min-width: 1200px;
+	height: 100%;
 	line-height: 1;
-}
+	}
 
-.page-header-inner {
+	.page-header-inner {
 	position: relative;
 	overflow: hidden;
 	width: 100%;
 	height: 200px;
-}
+	background-color: #333333;
+	}
 
-.page-header-text {
+	.page-header-text {
 	position: absolute;
 	left: 10%;
 	bottom: 30px;
@@ -28,4 +32,5 @@
 	text-align: center;
 	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 
+	}
 }
