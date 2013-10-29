@@ -9,8 +9,7 @@ gem 'pg'
 # Paranoia to not destroy records
 gem 'paranoia', '~> 2.0'
 
-# Using unicorn as the app server
-gem 'unicorn'
+gem 'thin'
 
 # Speed & Caching
 # gem 'turbolinks'
